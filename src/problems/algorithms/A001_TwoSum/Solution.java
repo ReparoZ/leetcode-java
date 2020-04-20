@@ -1,5 +1,7 @@
 package problems.algorithms.A001_TwoSum;
 
+import java.util.HashMap;
+
 /**
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
  *
@@ -17,7 +19,28 @@ package problems.algorithms.A001_TwoSum;
  */
 public class Solution {
 
+    /**
+     * Solution 1: Use hashmap to find the number and pos u need.
+     *
+     * Time complexity : O(n).
+     * Space complexity : O(n).
+     *
+     * For reference only:
+     * Runtime: 1 ms, 99.91%
+     * Memory Usage: 39.8 MB, 5.65%
+     */
     public int[] twoSum(int[] nums, int target) {
+        final HashMap<Integer, Integer> numMap = new HashMap<>();
+        for (int i = 0; i < nums.length; ++i) {
+            final int currentNum = nums[i];
+            final int needNum = target - currentNum;
+            if (numMap.containsKey(needNum)) {
+                return new int[] {numMap.get(needNum), i};
+            }
 
+            numMap.put(currentNum, i);
+        }
+
+        throw new IllegalArgumentException("No two sum solution");
     }
 }
