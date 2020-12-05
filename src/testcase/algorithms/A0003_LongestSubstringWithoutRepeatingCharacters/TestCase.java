@@ -1,12 +1,12 @@
-package testcase.algorithms.A003_LongestSubstringWithoutRepeatingCharacters;
+package testcase.algorithms.A0003_LongestSubstringWithoutRepeatingCharacters;
 
-import problems.algorithms.A003_LongestSubstringWithoutRepeatingCharacters.Solution;
+import problems.algorithms.A0003_LongestSubstringWithoutRepeatingCharacters.Solution;
 
 /**
  * A003_LongestSubstringWithoutRepeatingCharacters
  *
  * @author steven.zmj
- * @date 2020/04/21
+ * @date 2020/12/05
  */
 public class TestCase {
 

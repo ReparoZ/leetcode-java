@@ -1,4 +1,4 @@
-package problems.algorithms.A002_AddTwoNumbers;
+package problems.algorithms.A0002_AddTwoNumbers;
 
 /**
  * Definition for singly-linked list.

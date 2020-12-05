@@ -1,7 +1,7 @@
-package testcase.algorithms.A002_AddTwoNumbers;
+package testcase.algorithms.A0002_AddTwoNumbers;
 
-import problems.algorithms.A002_AddTwoNumbers.ListNode;
-import problems.algorithms.A002_AddTwoNumbers.Solution;
+import problems.algorithms.A0002_AddTwoNumbers.ListNode;
+import problems.algorithms.A0002_AddTwoNumbers.Solution;
 
 import java.util.Objects;
 

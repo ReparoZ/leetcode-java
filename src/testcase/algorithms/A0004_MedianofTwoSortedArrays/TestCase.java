@@ -1,14 +1,14 @@
-package testcase.algorithms.A004_MedianofTwoSortedArrays;
+package testcase.algorithms.A0004_MedianofTwoSortedArrays;
 
 import java.util.Arrays;
 
-import problems.algorithms.A004_MedianofTwoSortedArrays.Solution;
+import problems.algorithms.A0004_MedianofTwoSortedArrays.Solution;
 
 /**
  * A004_MedianofTwoSortedArrays
  *
  * @author steven.zmj
- * @date 2020/04/22
+ * @date 2020/12/05
  */
 public class TestCase {
 

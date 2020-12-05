@@ -1,17 +1,16 @@
-package testcase.algorithms.A001_TwoSum;
+package testcase.algorithms.A0001_TwoSum;
 
 
 
-import problems.algorithms.A001_TwoSum.Solution;
+import problems.algorithms.A0001_TwoSum.Solution;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 /**
  * A002_AddTwoNumbers
  *
  * @author steven.zmj
- * @date 2020/04/21
+ * @date 2020/12/01
  */
 public class TestCase {
 

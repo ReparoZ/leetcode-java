@@ -1,4 +1,4 @@
-package problems.algorithms.A003_LongestSubstringWithoutRepeatingCharacters;
+package problems.algorithms.A0003_LongestSubstringWithoutRepeatingCharacters;
 
 import java.util.HashMap;
 import java.util.Map;
