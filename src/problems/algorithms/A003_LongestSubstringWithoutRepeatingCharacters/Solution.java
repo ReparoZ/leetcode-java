@@ -4,83 +4,93 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Given a string, find the length of the longest substring without repeating characters.
+ * 给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。
  *
- * Example 1:
+ * 
  *
- * Input: "abcabcbb"
- * Output: 3
- * Explanation: The answer is "abc", with the length of 3.
- * Example 2:
+ * 示例1:
  *
- * Input: "bbbbb"
- * Output: 1
- * Explanation: The answer is "b", with the length of 1.
- * Example 3:
+ * 输入: s = "abcabcbb"
+ * 输出: 3 
+ * 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+ * 示例 2:
  *
- * Input: "pwwkew"
- * Output: 3
- * Explanation: The answer is "wke", with the length of 3.
- *              Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+ * 输入: s = "bbbbb"
+ * 输出: 1
+ * 解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+ * 示例 3:
  *
- * @author steven.zmj
- * @date 2020/04/21
+ * 输入: s = "pwwkew"
+ * 输出: 3
+ * 解释: 因为无重复字符的最长子串是"wke"，所以其长度为 3。
+ *     请注意，你的答案必须是 子串 的长度，"pwke"是一个子序列，不是子串。
+ * 示例 4:
+ *
+ * 输入: s = ""
+ * 输出: 0
+ * 
+ *
+ * 提示：
+ *
+ * 0 <= s.length <= 5 * 104
+ * s由英文字母、数字、符号和空格组成
+ *
+ * 来源：力扣（LeetCode）
+ * 链接：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters
+ * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ *
+ * @author ml3426
+ * @date 2020/12/05
  */
 public class Solution {
 
     /**
-     * Solution 1: Sliding Window, Always find the last not duplicated letter and calc the length between them.
-     * Dup the last letter to simplify the code.
+     * 解 1: 滑动窗口模式，通过窗口的端点的调整，来确定不重复字符串的长度
      *
-     * Time complexity : O(N).
-     * Space complexity : O(N).
+     * 时间复杂度 : O(n).
+     * 空间复杂度 : O(字符集范围).
      *
-     * For reference only:
-     * Runtime: 10 ms, 25.58%
-     * Memory Usage: 39.8 MB, 12.27%
+     * 解答消耗参考:
+     * Runtime: 7 ms, 82.00%
+     * Memory Usage: 38.6 MB, 74.00%
      */
     public int lengthOfLongestSubstring1(String s) {
-        if (s.length() == 0) {
-            return 0;
-        } else {
-            s += s.charAt(s.length() - 1);
-        }
-        final Map<Character, Integer> charCache = new HashMap<>();
-        int lastNotDup = 0;
-        int maxNotDup = 0;
-        for (int i = 0; i < s.length(); i++) {
-            final char curr = s.charAt(i);
-            if ((charCache.containsKey(curr) && charCache.get(curr) >= lastNotDup)) {
-                if (i - lastNotDup > maxNotDup) {
-                    maxNotDup = i - lastNotDup;
-                }
+        final Map<Character, Integer> lastCharPosMap = new HashMap<>(s.length());
+        int currLength = 0, maxLength = 0, lastNonRepeatPos = 0;
+        final char[] chars = s.toCharArray();
 
-                lastNotDup = charCache.get(curr) + 1;
-                if (s.length() - 2 - lastNotDup < maxNotDup) {
-                    break;
-                }
+        for (int i = 0; i < chars.length; i++) {
+            final char currChar = chars[i];
+            final Integer lastPos = lastCharPosMap.get(currChar);
+            if (lastPos == null) {
+                currLength++;
+            } else if (lastPos < lastNonRepeatPos) {
+                currLength++;
+            } else {
+                lastNonRepeatPos = lastPos + 1;
+                maxLength = Math.max(maxLength, currLength);
+                currLength = i - lastNonRepeatPos + 1;
             }
 
-            charCache.put(curr, i);
+            lastCharPosMap.put(currChar, i);
         }
 
-        return maxNotDup;
+        return Math.max(maxLength, currLength);
     }
 
     /**
-     * Solution2: Assuming string is append by ascii char, use char array instead of hashmap
+     * 解 2: 如果能确定字符串的字符范围的话，可以用数组代替Map，来确定不重复字符串的长度
      *
-     * Time complexity : O(N).
-     * Space complexity : O(N).
+     * 时间复杂度 : O(n).
+     * 空间复杂度 : O(字符集范围).
      *
-     * For reference only:
-     * Runtime: 2 ms, 99.74%
-     * Memory Usage: 39.4 MB, 16.75%
+     * 解答消耗参考:
+     * Runtime: 3 ms, 92.00%
+     * Memory Usage: 38.4 MB, 91.00%
      */
     public int lengthOfLongestSubstring2(String s) {
-        int maxNotDup = 0;
+        int maxNotDup = 0, lastNotDup = 0;
         int[] index = new int[128];
-        int lastNotDup = 0;
         for (int i = 0; i < s.length(); i++) {
             lastNotDup = Math.max(index[s.charAt(i)], lastNotDup);
             maxNotDup = Math.max(maxNotDup, i - lastNotDup + 1);

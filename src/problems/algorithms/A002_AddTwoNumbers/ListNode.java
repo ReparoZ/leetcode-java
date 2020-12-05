@@ -3,8 +3,8 @@ package problems.algorithms.A002_AddTwoNumbers;
 /**
  * Definition for singly-linked list.
  *
- * @author steven.zmj
- * @date 2020/04/21
+ * @author ml3426
+ * @date 2020/12/05
  */
 public class ListNode {
     public int val;

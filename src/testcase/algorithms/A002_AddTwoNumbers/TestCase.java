@@ -9,20 +9,22 @@ import java.util.Objects;
  * A002_AddTwoNumbers
  *
  * @author steven.zmj
- * @date 2020/04/21
+ * @date 2020/12/05
  */
 public class TestCase {
 
     public static void main(String[] args) {
         test("5", "5", "10");
+        test("342", "465", "807");
+        test("9999", "9999999", "10009998");
     }
 
     private static void test(String a, String b, String expectedResult) {
         final Solution solution = new Solution();
-        final ListNode listNode = solution.addTwoNumbers(genListNode("5"), genListNode("5"));
+        final ListNode listNode = solution.addTwoNumbers(genListNode(a), genListNode(b));
         final String actualResult = parseListNodeReverse(listNode);
         System.out.println(String.format("param1: %s, param2: %s, ", a, b) + (Objects.equals(expectedResult, actualResult) ?
-                String.format("correct! result is %s", actualResult) : String.format("Failed! expectedResult is %s, actualResult is %s.", actualResult, expectedResult)));
+                String.format("correct! result is %s", actualResult) : String.format("Failed! expectedResult is %s, actualResult is %s.", expectedResult, actualResult)));
     }
 
     private static ListNode genListNode(String input) {
