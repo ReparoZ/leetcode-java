@@ -13,6 +13,16 @@ import java.util.stream.Collectors;
  */
 public class ParseUtils {
 
+    public static List<Integer> parseArray(int[] expectedResult) {
+        final List<Integer> result = new ArrayList<>();
+
+        for (int ints : expectedResult) {
+            result.add(ints);
+        }
+
+        return result;
+    }
+
     public static List<List<Integer>> parse2DArray(int[][] expectedResult) {
         final List<List<Integer>> result = new ArrayList<>();
 
