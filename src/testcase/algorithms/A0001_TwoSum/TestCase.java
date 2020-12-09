@@ -24,6 +24,6 @@ public class TestCase {
         final Solution solution = new Solution();
         final int[] actualResult = solution.twoSum(nums, target);
         System.out.println(String.format("param1: %s, param2: %s, ", Arrays.toString(nums), target) + (Arrays.equals(expectedResult, actualResult) ?
-                String.format("correct! result is %s", Arrays.toString(actualResult)) : String.format("Failed! expectedResult is %s, actualResult is %s.", Arrays.toString(actualResult), Arrays.toString(expectedResult))));
+                String.format("correct! result is %s", Arrays.toString(actualResult)) : String.format("Failed! expectedResult is %s, actualResult is %s.", Arrays.toString(expectedResult), Arrays.toString(actualResult))));
     }
 }
