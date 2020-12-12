@@ -11,8 +11,8 @@ import problems.algorithms.A0005_LongestPalindromicSubstring.Solution;
 public class TestCase {
 
     public static void main(String[] args) {
-//        test("b", "b");
-//        test("babad", "bab");
+        test("b", "b");
+        test("babad", "bab");
         test("cbbd", "bb");
     }
 

@@ -40,6 +40,16 @@ import java.util.List;
  */
 public class Solution {
 
+    /**
+     * 解 1：对于排列后的字符按行来进行处理，先拼接第一行，再拼接第二行如此循环
+     *
+     * 时间复杂度 : O(n).
+     * 空间复杂度 : O(n).
+     *
+     * 解答消耗参考:
+     * Runtime: 6 ms, 79.00%
+     * Memory Usage: 39.2 MB, 74.00%
+     */
     public String convert(String s, int numRows) {
         if (numRows == 1) {
             return s;

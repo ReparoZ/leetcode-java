@@ -23,7 +23,15 @@ package problems.algorithms.A0005_LongestPalindromicSubstring;
 public class Solution {
 
     /**
-     * 解 1：
+     * 解 1：中轴扩展法，回文串因为其自身结构，因此一定会有一个中轴，而中轴可能是某个字母，例如回文串"aba"，也可能是某两个字符中间，如"ab|ba"
+     * 因此遍历每一个可能成为中轴的地方，从中轴开始向两方比对字符，并记录端点。
+     *
+     * 时间复杂度 : O(n^2).
+     * 空间复杂度 : O(1).
+     *
+     * 解答消耗参考:
+     * Runtime: 38 ms, 74.00%
+     * Memory Usage: 39.2 MB, 55.00%
      */
     public String longestPalindrome(String s) {
         String maxPalindrome = "";
