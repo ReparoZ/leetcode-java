@@ -1,8 +1,6 @@
 package testcase.utils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -28,6 +26,27 @@ public class ParseUtils {
 
         for (int[] ints : expectedResult) {
             result.add(Arrays.stream(ints).boxed().collect(Collectors.toList()));
+        }
+
+        return result;
+    }
+
+    public static <T> Set<Set<T>> parse2DArrayToSet(T[][] expectedResult) {
+        final Set<Set<T>> result = new HashSet<>();
+
+        for (T[] ints : expectedResult) {
+            final Set<T> inner = new HashSet<>(Arrays.asList(ints));
+            result.add(inner);
+        }
+
+        return result;
+    }
+
+    public static <T> Set<Set<T>> parse2DListToSet(List<List<T>> expectedResult) {
+        final Set<Set<T>> result = new HashSet<>();
+
+        for (List<T> ts : expectedResult) {
+            result.add(new HashSet<>(ts));
         }
 
         return result;
