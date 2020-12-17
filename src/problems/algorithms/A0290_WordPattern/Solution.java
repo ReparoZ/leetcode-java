@@ -45,8 +45,8 @@ public class Solution {
      * 空间复杂度 : O(n + m).
      *
      * 解答消耗参考:
-     * Runtime: 0 ms, 100.00%
-     * Memory Usage: 35.2 MB, 74.75%
+     * Runtime: 1 ms, 98.94.00%
+     * Memory Usage: 36.2 MB, 96.18%
      */
     public boolean wordPattern(String pattern, String s) {
         final char[] chars = pattern.toCharArray();
