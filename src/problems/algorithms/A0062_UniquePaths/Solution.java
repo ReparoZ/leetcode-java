@@ -1,9 +1,6 @@
 package problems.algorithms.A0062_UniquePaths;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.math.RoundingMode;
-import java.util.Arrays;
 
 /**
  * 一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。

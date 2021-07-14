@@ -31,6 +31,20 @@ public class ParseUtils {
         return result;
     }
 
+    public static List<List<Character>> parse2DArray(char[][] expectedResult) {
+        final List<List<Character>> result = new ArrayList<>();
+
+        for (char[] chars : expectedResult) {
+            final List<Character> innerResult = new ArrayList<>();
+            for (char aChar : chars) {
+                innerResult.add(aChar);
+            }
+            result.add(innerResult);
+        }
+
+        return result;
+    }
+
     public static <T> Set<Set<T>> parse2DArrayToSet(T[][] expectedResult) {
         final Set<Set<T>> result = new HashSet<>();
 
