@@ -1,0 +1,63 @@
+package problems.algorithms.A0704_BinarySearch;
+
+/**
+ * 给定一个n个元素有序的（升序）整型数组nums 和一个目标值target ，写一个函数搜索nums中的 target，如果目标值存在返回下标，否则返回 -1。
+ *
+ *
+ * 示例 1:
+ *
+ * 输入: nums = [-1,0,3,5,9,12], target = 9
+ * 输出: 4
+ * 解释: 9 出现在 nums 中并且下标为 4
+ * 示例2:
+ *
+ * 输入: nums = [-1,0,3,5,9,12], target = 2
+ * 输出: -1
+ * 解释: 2 不存在 nums 中因此返回 -1
+ * 
+ *
+ * 提示：
+ *
+ * 你可以假设 nums中的所有元素是不重复的。
+ * n将在[1, 10000]之间。
+ * nums的每个元素都将在[-9999, 9999]之间。
+ *
+ * 来源：力扣（LeetCode）
+ * 链接：https://leetcode-cn.com/problems/binary-search
+ * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ * 
+ * @author reparo
+ * @date 2021/11/11
+ */
+public class Solution {
+
+    /**
+     * 基础的二分，没有任何技巧可言
+     *
+     * 时间复杂度 : O(logn).
+     * 空间复杂度 : O(1).
+     *
+     * 解答消耗参考:
+     * Runtime: 0 ms, 100.00%
+     * Memory Usage: 39.2 MB, 75.86%
+     */
+    public int search(int[] nums, int target) {
+        if (nums.length == 0) {
+            return -1;
+        }
+
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int middle = (left + right) / 2;
+            if (nums[middle] == target) {
+                return middle;
+            } else if (nums[middle] < target) {
+                left = middle + 1;
+            } else {
+                right = middle - 1;
+            }
+        }
+
+        return -1;
+    }
+}
