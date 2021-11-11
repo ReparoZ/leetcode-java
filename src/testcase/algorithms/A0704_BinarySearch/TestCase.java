@@ -14,10 +14,10 @@ import java.util.Arrays;
 public class TestCase {
 
     public static void main(String[] args) {
-//        test(new int[]{}, 0, -1);
+        test(new int[]{}, 0, -1);
         test(new int[]{5}, 5, 0);
-//        test(new int[]{-1, 0, 3, 5, 9, 12}, 9, 4);
-//        test(new int[]{-1, 0, 3, 5, 9, 12}, 2, -1);
+        test(new int[]{-1, 0, 3, 5, 9, 12}, 9, 4);
+        test(new int[]{-1, 0, 3, 5, 9, 12}, 2, -1);
     }
 
     public static void test(final int[] nums, final int target, final int expectedResult) {
