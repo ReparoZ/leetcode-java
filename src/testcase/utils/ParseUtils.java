@@ -21,6 +21,16 @@ public class ParseUtils {
         return result;
     }
 
+    public static List<Character> parseArray(char[] expectedResult) {
+        final List<Character> result = new ArrayList<>();
+
+        for (char ints : expectedResult) {
+            result.add(ints);
+        }
+
+        return result;
+    }
+
     public static List<List<Integer>> parse2DArray(int[][] expectedResult) {
         final List<List<Integer>> result = new ArrayList<>();
 
