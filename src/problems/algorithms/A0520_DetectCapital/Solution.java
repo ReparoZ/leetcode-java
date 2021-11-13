@@ -1,4 +1,4 @@
-package problems.algorithms.A520_DetectCapital;
+package problems.algorithms.A0520_DetectCapital;
 
 /**
  * 我们定义，在以下情况时，单词的大写用法是正确的：

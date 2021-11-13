@@ -1,8 +1,6 @@
-package testcase.algorithms.A520_DetectCapital;
+package testcase.algorithms.A0520_DetectCapital;
 
-import problems.algorithms.A520_DetectCapital.Solution;
-
-import java.util.Arrays;
+import problems.algorithms.A0520_DetectCapital.Solution;
 
 /**
  * A520_DetectCapital

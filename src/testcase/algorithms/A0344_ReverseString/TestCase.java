@@ -1,6 +1,6 @@
-package testcase.algorithms.A344_ReverseString;
+package testcase.algorithms.A0344_ReverseString;
 
-import problems.algorithms.A344_ReverseString.Solution;
+import problems.algorithms.A0344_ReverseString.Solution;
 import testcase.utils.ParseUtils;
 
 import java.util.List;
