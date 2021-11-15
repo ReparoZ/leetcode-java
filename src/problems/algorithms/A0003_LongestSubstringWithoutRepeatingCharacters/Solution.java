@@ -85,7 +85,7 @@ public class Solution {
      * 空间复杂度 : O(字符集范围).
      *
      * 解答消耗参考:
-     * Runtime: 3 ms, 92.00%
+     * Runtime: 2 ms, 98.95%
      * Memory Usage: 38.4 MB, 91.00%
      */
     public int lengthOfLongestSubstring2(String s) {
