@@ -75,4 +75,8 @@ public class ParseUtils {
 
         return result;
     }
+
+    public static Set<List<Integer>> parse2DIntArrayToOuterSet(int[][] expectedResult) {
+        return new HashSet<>(parse2DArray(expectedResult));
+    }
 }
