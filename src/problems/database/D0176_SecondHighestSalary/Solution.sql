@@ -32,6 +32,8 @@ CREATE TABLE Employee (
                         Salary INT
 );
 
+INSERT INTO Employee (Salary) VALUES (100);
+INSERT INTO Employee (Salary) VALUES (200);
 INSERT INTO Employee (Salary) VALUES (300);
 
 # Solution：
