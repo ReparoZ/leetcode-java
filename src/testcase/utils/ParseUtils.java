@@ -79,4 +79,10 @@ public class ParseUtils {
     public static Set<List<Integer>> parse2DIntArrayToOuterSet(int[][] expectedResult) {
         return new HashSet<>(parse2DArray(expectedResult));
     }
+
+    public static Set<Set<Integer>> parse2DIntArrayToSet(int[][] expectedResult) {
+        return parse2DArray(expectedResult).stream()
+                .map(HashSet::new)
+                .collect(Collectors.toSet());
+    }
 }
