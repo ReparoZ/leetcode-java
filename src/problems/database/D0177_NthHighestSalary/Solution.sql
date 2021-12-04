@@ -38,6 +38,11 @@ INSERT INTO Employee (Salary) VALUES (300);
 DROP FUNCTION IF EXISTS getNthHighestSalary;
 
 # Solution：
+## 用子查询先查出来前N个，然后在找其中最小的，如果查询的名次超过了总数据量，则用条件判断语句识别并返回NULL
+##
+## 解答消耗参考:
+## Runtime: 376 ms, 52.49%
+## Memory Usage: 0 MB, 100.00%
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT READS SQL DATA
 BEGIN
     RETURN (
