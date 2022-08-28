@@ -77,3 +77,18 @@ WHERE id IN (SELECT *
              FROM (SELECT DISTINCT(P.id)
                    FROM Person
                             JOIN Person P on Person.email = P.email AND Person.id < P.id) as PPi);
+
+# Solution 2：
+## 直接通过GROUP BY找到每个邮箱的最小ID，直接删除所有不是最小ID的条目
+## 这种解法相比Solution1不产生笛卡尔积，更加优秀
+##
+## 解答消耗参考:
+## Runtime: 564 ms, 95.34%
+## Memory Usage: 0 MB, 100.00%
+DELETE
+FROM Person
+WHERE id NOT IN
+      (SELECT id
+       FROM (SELECT MIN(id) AS id
+             FROM Person
+             GROUP BY Email) t)
