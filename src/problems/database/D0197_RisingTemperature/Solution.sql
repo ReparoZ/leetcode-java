@@ -82,7 +82,7 @@ WHERE W1.recordDate = (SELECT W1.recordDate
                          AND W1.temperature > W2.temperature);
 
 # Solution 2：
-## 对开窗函数LEAD的建单考察
+## 对开窗函数LEAD的简单考察
 ##
 ## 解答消耗参考:
 ## Runtime: 413 ms, 84.11%
